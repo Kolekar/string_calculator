@@ -43,7 +43,7 @@ RSpec.describe Calculator do
     end
 
     it 'returns addition three element' do
-      expect(calculator.add("//;\n1;2;6")).to eq(9)
+      expect(calculator.add("//|\n1|2|6")).to eq(9)
     end
   end
 end

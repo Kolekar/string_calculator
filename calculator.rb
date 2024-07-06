@@ -12,7 +12,11 @@ class Calculator
     @str = str.to_s
     return 0 if str.to_s.empty?
 
-    number_array.sum
+    numbers = number_array
+    negatives = numbers.select(&:negative?)
+    raise "Negative numbers not allowed: #{negatives.join(', ')}" if negatives.any?
+
+    numbers.sum
   end
 
   private

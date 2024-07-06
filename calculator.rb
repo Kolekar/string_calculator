@@ -4,5 +4,12 @@
 # The input string can contain numbers separated by commas or new lines.
 
 class Calculator
-  def add(str); end
+  def add(str)
+    str = str.to_s
+    return 0 if str.to_s.empty?
+
+    numbers = str.split(',')
+    numbers.map!(&:to_i)
+    numbers.sum
+  end
 end

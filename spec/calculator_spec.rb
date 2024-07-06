@@ -7,7 +7,7 @@ require_relative '../calculator'
 
 RSpec.describe Calculator do
   let(:calculator) { Calculator.new }
-  describe '#add' do
+  describe 'add method to handle comma between numbers' do
     it 'returns zero when string is empty' do
       expect(calculator.add('')).to eq(0)
     end
@@ -18,6 +18,22 @@ RSpec.describe Calculator do
 
     it 'returns addition of two element' do
       expect(calculator.add('1,5')).to eq(6)
+    end
+  end
+
+  describe 'add method to handle any amount of numbers' do
+    it 'returns addition of three element' do
+      expect(calculator.add('1\n2,3')).to eq(6)
+    end
+
+    it 'returns addition of four element' do
+      expect(calculator.add('1,2,3,4')).to eq(10)
+    end
+  end
+
+  describe 'add method to handle new lines between numbers' do
+    it 'returns addition of element' do
+      expect(calculator.add('1\n2,3')).to eq(6)
     end
   end
 end

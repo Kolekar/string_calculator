@@ -36,4 +36,14 @@ RSpec.describe Calculator do
       expect(calculator.add("1\n2,3")).to eq(6)
     end
   end
+
+  describe 'support different delimiters' do
+    it 'returns addition of element' do
+      expect(calculator.add("//;\n1;2")).to eq(3)
+    end
+
+    it 'returns addition three element' do
+      expect(calculator.add("//;\n1;2;6")).to eq(9)
+    end
+  end
 end

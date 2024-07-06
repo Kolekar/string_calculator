@@ -23,7 +23,7 @@ RSpec.describe Calculator do
 
   describe 'add method to handle any amount of numbers' do
     it 'returns addition of three element' do
-      expect(calculator.add('1\n2,3')).to eq(6)
+      expect(calculator.add('1,2,3')).to eq(6)
     end
 
     it 'returns addition of four element' do
@@ -33,7 +33,7 @@ RSpec.describe Calculator do
 
   describe 'add method to handle new lines between numbers' do
     it 'returns addition of element' do
-      expect(calculator.add('1\n2,3')).to eq(6)
+      expect(calculator.add("1\n2,3")).to eq(6)
     end
   end
 end

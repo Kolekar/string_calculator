@@ -8,7 +8,10 @@ class Calculator
     str = str.to_s
     return 0 if str.to_s.empty?
 
-    numbers = str.split(',')
+    separator = ','
+    str = str.gsub("\n", separator)
+
+    numbers = str.split(separator)
     numbers.map!(&:to_i)
     numbers.sum
   end
